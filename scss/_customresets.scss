@@ -1,0 +1,81 @@
+//	-------------
+//	General
+
+	a	 {text-decoration:none; outline:0;}
+
+
+//	-------------
+//	Forms
+
+	label {color:black;}
+
+	label, input[type="email"], input[type="password"], input[type="text"], input[type="search"], input[type="tel"], textarea  {
+		font: 13px/15px $sans;
+	}
+
+	input, input[type="search"]	{
+		-webkit-appearance: none; 
+		border-radius: 0;
+	}
+	input[type="search"]::-webkit-search-decoration,
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-results-button,
+	input[type="search"]::-webkit-search-results-decoration {
+	  display: none;
+	}
+	
+		
+	input[type="email"], input[type="password"], input[type="text"], input[type="search"], input[type="tel"], textarea {
+		outline:none;
+		min-width:150px;
+		max-width:600px;
+		width:90%;
+		border:0;
+		padding:0 5% 20px 5%;
+		-webkit-appearance:none;
+		-webkit-border-radius:0;
+		background:transparent;
+		border-bottom:1px solid #fff;
+		@include transition(all .3s linear);
+	}
+
+	
+	input[type="submit"] {
+		color:#fff;
+		border:0;
+		padding:20px 60px;
+		-webkit-appearance:none;
+		outline:none;
+		cursor:pointer;
+		font:500 12px/15px $sans;
+		min-width:240px;
+		@include transition(background .3s linear);
+		&:hover {
+			background-color:gray;
+		}
+	}
+	
+	textarea {
+		-webkit-appearance:none;
+		@include untexttransform;
+		width:90%;
+		min-height:150px;
+		max-width:90%;
+		border:1px solid #fff;
+		padding:12px 5%;
+	}
+	
+
+	input::-webkit-input-placeholder 		{color: $gray; @include transition(all .5s linear);}
+	input:focus::-webkit-input-placeholder 	{color: $gray_light;}
+
+ 	/* Firefox 18- */	
+	input:-moz-placeholder 					{color: $gray; opacity:1; @include transition(all .5s linear); }
+	input:focus:-moz-placeholder 			{color: $gray_light;  }
+	 /* Firefox 19+ */                  	
+	input::-moz-placeholder 				{color: $gray; opacity:1; @include transition(all .5s linear);}
+	input:focus::-moz-placeholder 			{color: $gray_light;  }
+                                        	
+	input:-ms-input-placeholder				{color: $gray; @include transition(all .5s linear);}
+	input:focus:-ms-input-placeholder		{color: $gray_light;}
+

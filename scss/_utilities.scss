@@ -1,0 +1,143 @@
+//	-------------
+//	Pseudo-compass
+
+	@mixin transition ($val) {
+	    -webkit-transition: $val;
+	    -moz-transition: $val;
+	    -o-transition: $val;
+	    transition: $val;
+	}
+
+	
+	@mixin background-size($val) {
+	    -webkit-background-size: $val;
+	    -moz-background-size: $val;
+	    -o-background-size: $val;
+	    background-size: $val;
+	}
+	
+	// generic vendorize mixin
+	@mixin vendorize($name, $argument) {
+	  -webkit-#{$name}: #{$argument};
+	  -ms-#{$name}: #{$argument};
+	  -moz-#{$name}: #{$argument};
+	  -o-#{$name}: #{$argument};
+	  #{$name}: #{$argument};
+	}
+	
+//	-------------
+//	Type
+	
+	@mixin smooth 			{ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+ 	@mixin typefix {-webkit-backface-visibility: hidden;-moz-backface-visibility: hidden;-ms-backface-visibility: hidden;}
+	@mixin uc 				{text-transform:uppercase; letter-spacing:1px;}
+	@mixin lc 				{text-transform:lowercase; letter-spacing:0;}
+	@mixin untexttransform 	{text-transform:none; letter-spacing:0;}
+	@mixin texthide 		{line-height: 0; font-size: 0; color: transparent;}
+
+	
+//	-------------
+//	Responsive
+	
+	@mixin respond($media) 	{@media only screen and (min-width: $media) { @content; } }
+
+
+//	-------------
+//	Layout
+	
+	.clear 		{clear:both;}
+	.cf:after	{content: ""; zoom: 1; font-size:0; display: block; height: 0; clear: both; visibility: hidden;}
+	
+//	Simple shorthands for margins, padding, and width/height properties
+	@mixin m($val) 				{margin-top:$val; margin-bottom:$val;}		// 'margin'
+	@mixin p($val) 				{padding-top:$val;padding-bottom:$val;}		// 'margin sides'
+	@mixin ms($val) 			{margin-left:$val; margin-right:$val;}		// 'padding'
+	@mixin ps($val) 			{padding-left:$val;padding-right:$val;}		// 'padding sides'
+	@mixin dim($width, $height) {width:$width; height:$height;}				// 'dimensions'
+	
+	// Container for element will have to be set to position:relative;
+	@mixin center($width, $height) {
+		position:absolute;
+		left:50%;
+		top:50%;
+		width:$width;
+		height:$height;
+		margin-left:-($width/2);
+		margin-top:-($height/2);
+	}
+	
+//	Based on
+//	http://css-tricks.com/video-screencasts/132-quick-useful-case-sass-math-mixins/
+	@mixin grid($itemsPerRow, $marginRight) {
+		float:left;
+		$itemsPerRowLessOne: ($itemsPerRow - 1);
+		$total_margin: ($itemsPerRowLessOne) * $marginRight;
+		width:((99.5 - $total_margin) / $itemsPerRow);
+		// set margin-right on nth-of-type(n) to match CSS specificity of next line
+		&:nth-of-type(n) {margin-right: $marginRight; clear:none;}
+		margin-right: $marginRight;
+		&:nth-of-type(#{$itemsPerRow}n) 		{margin-right:0; clear:none;}
+		&:nth-of-type(#{$itemsPerRow}n+1)		{clear:both;}
+	}
+	
+//	Based on
+//	http://opticalcortex.com/the-end-of-sprites-the-rise-of-svg/
+	@mixin bg_image($filename, $type:svg) {
+		@if $type == 'svg' {
+			background-image: inline-image('#{$img_path}#{$filename}.svg', image/svg\+xml);
+			html.no-svg & {background-image: url('#{$img_path}#{$filename}.png');}	
+		}
+		@else {
+			background-image: url('#{$img_path}#{$filename}.#{$type}');
+		}
+		background-repeat: no-repeat;
+	}
+ 
+	@mixin bg_color($r, $g, $b, $a) {
+		$rgba: rgba($r, $g, $b, $a);
+	 	$ie-hex-str: ie-hex-str($rgba);
+	 	background-color: transparent;
+	 	background-color:rgba($r,$g,$b,$a);
+	 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+	 	zoom: 1;
+	 }
+	 
+// Border-box
+     @mixin border-box {
+ 	    -webkit-box-sizing: border-box;
+ 	    -moz-box-sizing: border-box;
+ 	    -o-box-sizing: border-box;
+ 	    box-sizing: border-box;
+     }
+//	Flexbox
+ 	@mixin justify-content ($val) {
+ 		-webkit-justify-content: $val;
+ 		justify-content: $val;
+ 	}
+ 	@mixin align-items($val) {
+ 		-webkit-align-items: $val;
+ 		align-items: $val;
+ 	}
+ 	@mixin flex {
+ 		display: -webkit-box;
+ 		display: -moz-box;
+ 		display: -ms-flexbox;
+ 		display: -webkit-flex;
+ 		display: flex;
+ 	}
+ 
+
+//	Animations
+	@mixin keyframes($name) {
+		@-webkit-keyframes #{$name} {@content; }
+		@-moz-keyframes #{$name} {@content;}
+		@-ms-keyframes #{$name} {@content;}
+		@keyframes #{$name} {@content;}
+	}
+
+	@mixin animation ($name, $duration: 1s, $delay: 0s, $iterations: 1, $direction: normal, $timing: ease, $fillmode: forwards) {
+		-webkit-animation: 	$name $duration $delay $iterations $direction $timing $fillmode ;
+		-moz-animation: 	$name $duration $delay $iterations $direction $timing $fillmode ;
+		-o-animation: 		$name $duration $delay $iterations $direction $timing $fillmode ;
+		animation: 			$name $duration $delay $iterations $direction $timing $fillmode ;
+	}

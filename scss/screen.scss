@@ -1,0 +1,115 @@
+	@import "_normalize";
+	@import "_vars";
+	@import "_utilities";
+	@import "_customresets";
+	@import "_breakpointflags";
+
+
+
+	// Transitions!
+
+
+	@include keyframes (slideDown) {
+		0% 		{top: -80px; }
+		100% 	{top: 0; }
+	}
+	@include keyframes (slideUp) {
+		0% 		{top: 80px; }
+		100% 	{top: 0; }
+	}
+	@include keyframes (inRight) {
+		0% 		{left:100%; }
+		100% 	{left:0;  }
+	}
+	@include keyframes (inLeft) {
+		0% 		{left:-100%; }
+		100% 	{left:0;  }
+	}	
+	@include keyframes (scaleDown) {
+		0% 		{@include vendorize('transform',' scale(1.3)');}
+		100% 	{@include vendorize('transform',' scale(1.0)');}
+	}	
+	
+	@include keyframes (flipDown) {
+		0% 		{@include vendorize('transform',' rotateX(-40deg)');}
+		100% 	{@include vendorize('transform',' rotateX(0)');}
+	}	
+	
+	$animation_duration: .4s;
+
+//	Class
+
+	body  {overflow-x:hidden;}
+	
+	.main, .element {position:relative;@include vendorize('perspective',' 600px'); }
+	
+	.main .element {
+//		@include vendorize ('animation-direction','reverse');
+		
+		&.inLeft 	{@include animation(inLeft, $animation_duration, null, null, null, null, null);}
+		&.inRight 	{@include animation(inRight, $animation_duration, null, null, null, null, null);}
+		
+		&.slideDown	{@include animation(slideDown, $animation_duration, null, null, null, null, null);}
+		&.slideUp	{@include animation(slideUp, $animation_duration, null, null, null, null, null);}
+		
+		&.scaleDown	{@include animation(scaleDown, $animation_duration, null, null, null, null, null);}
+		
+		&.flipDown	{@include animation(flipDown, $animation_duration, null, null, null, null, null);}
+		
+	}
+	
+//
+	.main.exit .element {
+		@include vendorize ('animation-direction','reverse');
+	}
+
+
+
+
+
+	$max: 800px ;
+	
+	$pink: #e71a71;
+	$cyan: #09b3f2;
+	$yellow: #f2ce09;
+	
+//	html, body {@include dim(100%,100%);}
+	body 	{font:12px/1.75 $sans; margin:0; padding:0; color: $gray; border-top:15px solid $cyan; }
+	body, body * {@include border-box;}
+	
+	body.page2 {border-color:$pink;}
+	body.page3 {border-color:$yellow;}
+	
+	.main {margin:20px auto; position:relative;}
+	
+	p, h2 	{margin: 0 0 25px 0;}
+	h2 		{font-size:12px; font-weight:bold; color:#000;}
+
+	img 	{max-width:100%; display:block; border:0;}
+
+	a 		{color:#d41666;}
+	a:hover {color:#9a154d}
+
+	.main		{padding:20px 50px; max-width:$max; ;margin:0 auto; min-height:600px;}
+
+	.main-header {max-width:$max; @include ps(50px); margin:0 auto; }
+	
+	.main-header {
+		@include transition(all .4s ease);
+		margin-bottom:50px;
+		nav {
+			height:80px;
+			ul 			{list-style:none; margin:0;padding:0;}
+			li 			{float:left;}
+			li a	 	{background:#eee; font-weight:bold; display:block; padding:10px 20px; color:#bbb; @include transition(all .3s ease);}
+			li a:hover	{background:#eaeaea; color:#222;}
+			li.active a {background:$cyan; color:#fff; top:0; @include p(15px);  }
+		}
+	}
+	
+	
+	@include respond($size3) {
+	
+	.left 	{width:48%; float:left;}
+	.right 	{width:48%; float:right;}
+}

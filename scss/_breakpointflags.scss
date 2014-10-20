@@ -1,0 +1,13 @@
+	body:after {
+		content: "size1";
+		display:none;
+	}
+	@for $i from 1 through length($sizes) {
+			$num: $i + 1;
+			@include respond(nth($sizes, $i)) {
+				body:after {
+					content: "size#{$num}";
+					display:none;
+				}
+			}
+		}

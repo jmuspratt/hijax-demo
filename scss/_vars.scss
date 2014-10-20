@@ -1,0 +1,26 @@
+//	-------------
+//	Colors
+	
+	$gray: #777;
+	$gray_light: #d9d9d9;
+	$gray_verylight: #cacaca;
+	$gray_superlight: #eaeaea;
+
+
+//	-------------
+//	Fonts
+    $sans: arial, sans-serif;
+    $serif: georgia, serif;
+	$mono: courier, monospace;
+
+
+//	-------------
+//	Sizes
+	$size2: 660px;		// still includes kindle fire vertical?
+	$size3: 760px;		// still includes ipad vertical
+	$size4: 970px;		// still includes ipad horizontal
+	$size5: 1060px;		// still includes laptops
+	$size6: 1200px;		// still includes big desktops
+	
+	// make a list of all the sizes
+	$sizes: $size2, $size3, $size4, $size5, $size6;

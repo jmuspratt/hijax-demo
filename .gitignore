@@ -1,0 +1,8 @@
+# osx noise
+.DS_Store
+profile
+
+# other stuff
+.sass-cache/
+logs/
+- old/
