@@ -6,9 +6,8 @@
 
 
 
-	// Transitions!
-
-
+	// Transitions
+	
 	@include keyframes (slideDown) {
 		0% 		{top: -80px; }
 		100% 	{top: 0; }
@@ -35,16 +34,18 @@
 		100% 	{@include vendorize('transform',' rotateX(0)');}
 	}	
 	
+//	Global timing matches JS fadein/fadeout
+	
 	$animation_duration: .4s;
 
-//	Class
+
+
 
 	body  {overflow-x:hidden;}
 	
 	.main, .element {position:relative;@include vendorize('perspective',' 600px'); }
 	
 	.main .element {
-//		@include vendorize ('animation-direction','reverse');
 		
 		&.inLeft 	{@include animation(inLeft, $animation_duration, null, null, null, null, null);}
 		&.inRight 	{@include animation(inRight, $animation_duration, null, null, null, null, null);}
@@ -101,9 +102,9 @@
 			height:80px;
 			ul 			{list-style:none; margin:0;padding:0;}
 			li 			{float:left;}
-			li a	 	{background:#eee; font-weight:bold; display:block; padding:10px 20px; color:#bbb; @include transition(all .3s ease);}
+			li a	 	{background:#eee; font-weight:bold; display:block; padding: 10px 30px; color:#bbb; @include transition(all .3s ease);}
 			li a:hover	{background:#eaeaea; color:#222;}
-			li.active a {background:$cyan; color:#fff; top:0; @include p(15px);  }
+			li.active a {background:$cyan; color:#fff; top:0; padding:15px 30px;   }
 		}
 	}
 	
