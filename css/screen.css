@@ -812,20 +812,28 @@ a:hover {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  margin-bottom: 50px; }
+  position: relative; }
   .main-header nav {
+    margin-top: 50px;
     height: 80px; }
     .main-header nav ul {
       list-style: none;
       margin: 0;
       padding: 0; }
     .main-header nav li {
-      float: left; }
+      float: left;
+      margin-right: 30px; }
     .main-header nav li a {
       background: #eee;
       font-weight: bold;
+      border-radius: 20px;
       display: block;
-      padding: 10px 30px;
+      padding: 6px 20px;
+      -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+      -moz-transform-origin: center top;
+      -o-transform-origin: center top;
+      transform-origin: center top;
       color: #bbb;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
@@ -838,7 +846,7 @@ a:hover {
       background: #09b3f2;
       color: #fff;
       top: 0;
-      padding: 15px 30px; }
+      padding: 6px 40px; }
 
 @media only screen and (min-width: 760px) {
   .left {

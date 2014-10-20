@@ -97,14 +97,16 @@
 	
 	.main-header {
 		@include transition(all .4s ease);
-		margin-bottom:50px;
+		position:relative;
 		nav {
+			margin-top:50px;
 			height:80px;
 			ul 			{list-style:none; margin:0;padding:0;}
-			li 			{float:left;}
-			li a	 	{background:#eee; font-weight:bold; display:block; padding: 10px 30px; color:#bbb; @include transition(all .3s ease);}
+			li 			{float:left; margin-right:30px;}
+			li a	 	{background:#eee; font-weight:bold; border-radius:20px; display:block; padding: 6px 20px;  @include vendorize('transform-origin', 'center top'); color:#bbb; @include transition(all .3s ease);}
 			li a:hover	{background:#eaeaea; color:#222;}
-			li.active a {background:$cyan; color:#fff; top:0; padding:15px 30px;   }
+			
+			li.active a {background:$cyan; color:#fff; top:0;  padding: 6px 40px; }
 		}
 	}
 	
