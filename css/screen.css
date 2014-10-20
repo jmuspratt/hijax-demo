@@ -822,7 +822,7 @@ a:hover {
       padding: 0; }
     .main-header nav li {
       float: left;
-      margin-right: 20px; }
+      margin-right: 15px; }
     .main-header nav li:last-child {
       margin-right: 0; }
     .main-header nav li a {
@@ -830,7 +830,7 @@ a:hover {
       font-weight: bold;
       border-radius: 20px;
       display: block;
-      padding: 6px 20px;
+      padding: 6px 15px;
       -webkit-transform-origin: center top;
       -ms-transform-origin: center top;
       -moz-transform-origin: center top;
