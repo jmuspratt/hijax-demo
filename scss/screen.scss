@@ -103,6 +103,7 @@
 			height:80px;
 			ul 			{list-style:none; margin:0;padding:0;}
 			li 			{float:left; margin-right:20px;}
+			li:last-child {margin-right:0;}
 			li a	 	{background:#eee; font-weight:bold; border-radius:20px; display:block; padding: 6px 20px;  @include vendorize('transform-origin', 'center top'); color:#bbb; @include transition(all .3s ease);}
 			li a:hover	{background:#eaeaea; color:#222;}
 			

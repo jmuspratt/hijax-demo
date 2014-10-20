@@ -823,6 +823,8 @@ a:hover {
     .main-header nav li {
       float: left;
       margin-right: 20px; }
+    .main-header nav li:last-child {
+      margin-right: 0; }
     .main-header nav li a {
       background: #eee;
       font-weight: bold;
