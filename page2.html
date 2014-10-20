@@ -1,14 +1,39 @@
-<?php $page_title = 'Page 2'; ?>
-<?php $page1_active = false; ?>
-<?php $page2_active = true; ?>
-<?php $page3_active = false; ?>
+<!doctype html>
 
-<?php include 'inc/head.php'; ?>
+<head>
+	<title>Page 2<title>
+
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="robots" content="all">
+
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen" />
+
+	<!-- iphone -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="css/screen-lt-ie9.css" media="screen" />
+		<![endif]-->
+			
+
+	
+	</head>
+
 
 <body class="page2" data-features="AnimatedScrolling OpenClose TapHover">
 	
-	<?php include 'inc/nav.php'; ?>
-
+	<header class="main-header">
+		<nav>
+			<ul class="cf">
+				<li class=""><a href="index.php">Page 1</a></li>
+				<li class="active"><a href="page2.php">Page 2</a></li>
+				<li class=""><a href="page3.php">Page 3</a></li>
+			</ul>
+		</nav>
+	</header>		
+		
 	<div id="main" class="main " role="main">
 			
 		<div class="element ">
@@ -30,6 +55,11 @@
 			
 	</div> <!-- main -->
 
+	<!-- js -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/jquery.history.js"></script>
+	<script src="js/scripts-new.js"></script> 
+	
 
-		
-	<?php include 'inc/footer.php'; ?>
+</body>
+</html>

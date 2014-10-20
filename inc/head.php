@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
-	<title><?php if (isset($page_title)) {echo " " . $page_title;}?></title>
+	<title>Page 1<title>
 
 	<!-- meta -->
 	<meta charset="utf-8">
