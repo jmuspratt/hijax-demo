@@ -796,7 +796,7 @@ a:hover {
   color: #9a154d; }
 
 .main {
-  padding: 20px 50px;
+  padding: 20px 20px;
   max-width: 800px;
   margin: 0 auto;
   min-height: 600px; }
@@ -822,7 +822,7 @@ a:hover {
       padding: 0; }
     .main-header nav li {
       float: left;
-      margin-right: 30px; }
+      margin-right: 20px; }
     .main-header nav li a {
       background: #eee;
       font-weight: bold;

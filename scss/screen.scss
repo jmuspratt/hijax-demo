@@ -91,7 +91,7 @@
 	a 		{color:#d41666;}
 	a:hover {color:#9a154d}
 
-	.main		{padding:20px 50px; max-width:$max; ;margin:0 auto; min-height:600px;}
+	.main		{padding:20px 20px; max-width:$max; ;margin:0 auto; min-height:600px;}
 
 	.main-header {max-width:$max; @include ps(50px); margin:0 auto; }
 	
@@ -102,7 +102,7 @@
 			margin-top:50px;
 			height:80px;
 			ul 			{list-style:none; margin:0;padding:0;}
-			li 			{float:left; margin-right:30px;}
+			li 			{float:left; margin-right:20px;}
 			li a	 	{background:#eee; font-weight:bold; border-radius:20px; display:block; padding: 6px 20px;  @include vendorize('transform-origin', 'center top'); color:#bbb; @include transition(all .3s ease);}
 			li a:hover	{background:#eaeaea; color:#222;}
 			
