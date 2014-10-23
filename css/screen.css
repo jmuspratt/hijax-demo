@@ -704,6 +704,12 @@ body:after {
     -moz-transform:  rotateX(0);
     -o-transform:  rotateX(0);
     transform:  rotateX(0); } }
+a {
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
+  -o-transition: color 0.3s linear;
+  transition: color 0.3s linear; }
+
 body {
   overflow-x: hidden; }
 
@@ -848,6 +854,13 @@ a:hover {
       color: #fff;
       top: 0;
       padding: 6px 30px; }
+  .main-header .code-link {
+    padding-top: 27px; }
+    .main-header .code-link a {
+      font-weight: bold;
+      color: #ddd; }
+    .main-header .code-link a:hover {
+      color: #09b3f2; }
 
 @media only screen and (min-width: 760px) {
   .left {
@@ -856,4 +869,13 @@ a:hover {
 
   .right {
     width: 48%;
-    float: right; } }
+    float: right; }
+
+  .main-header nav {
+    float: left;
+    width: 60%; }
+
+  .code-link {
+    float: right;
+    width: 35%;
+    text-align: right; } }
